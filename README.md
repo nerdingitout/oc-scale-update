@@ -1,4 +1,4 @@
-# oc-scale-update
+# Update and Rollback Deployment with Red Hat OpenShift
 Scale, Update and Rollback your application deployment
 ## Content
 - Prerequisites
