@@ -45,7 +45,7 @@ Note that the service inside the pod is accessible using the <Node IP>:<NodePort
  Fill in the information as follows:<br><br>
  <b>Name:</b>myguestbook<br>
  <b>Service:</b>myguestbook<br>
- <b>Target Port:</b>3000&#8594;3000(TCP)<br>
+ <b>Target Port:</b>3000&#8594;3000(TCP)<br><br>
  Then click 'Create', you can leave the rest of the fields empty.
 ![create route](https://user-images.githubusercontent.com/36239840/97185180-3164a480-17b9-11eb-9fd3-1da5b8864c43.JPG)
 Once created, you will be redirected to 'Route Overview' where you can access the external route from the URL under Location as shown in the screenshot. The Route has been created successfully, and it provides a publicly accessible endpoint URL using which we can access our guestbook application.<br>
