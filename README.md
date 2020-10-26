@@ -19,16 +19,18 @@ In this tutorial, you will learn how to scale and how to update your deployment 
 ## Create Application Using S2I
 1- Create a new project using the following command.<br>
 ```
-oc new-project guestbook-project
+oc create namespace guestbook-project
 ```
 2- Create a new deployment resource using the ibmcom/guestbook:v1 docker image in the project we just created.<br>
 ```
-oc new-app myguestbook1 --image=ibmcom/guestbook:v1
+oc create deployment myguestbook --image=ibmcom/guestbook:v2
 ```
 3- This deployment creates the corresponding Pod that's in running state. Use the following command to see the list of pods in your namespace<br>
 ```
 oc get pods
 ```
+![get pods](https://user-images.githubusercontent.com/36239840/97184468-602e4b00-17b8-11eb-8bba-9e8a8d396765.JPG)<br>
+
 4- Expose the deployment on port 3000<br>
 ```
 oc expose deployment myguestbook --type="NodePort" --port=3000
@@ -37,11 +39,17 @@ To view the service we just exposed. Use the following command.<br>
 ```
 oc get service
 ```
+![get service](https://user-images.githubusercontent.com/36239840/97184649-94a20700-17b8-11eb-93a3-15219a6b9845.JPG)
+
 Note that the service inside the pod is accessible using the <Node IP>:<NodePort>, but in case of OpenShift on IBM Cloud the NodeIP is not publicly accessible. One can use the built-in kubernetes terminal available in IBM Cloud which spawns a kubernetes shell which is part of the OpenShift cluster network and NodeID:NodePort is accessible from that shell.<br>
- 5- To make the exposed service publicly accessible, create a public router with the following command.<br>
- ```
- DO THAT WITH THE WEB CONSOLE, AND DESCRIBE DETAILS
- ```
+ 5- To make the exposed service publicly accessible, you will need to create a public router. First, go to <b>Networking &#8594; Routes</b> from the Administrator Perspective on the web console, then click 'Create Route'.<br>
+ Fill in the information as follows:<br>
+ <b>Name:</b>myguestbook<br>
+ <b>Service:</b>myguestbook<br>
+ <b>Target Port:</b>3000&#8594;3000(TCP)<br>
+ Then click 'Create', you can leave the rest of the fields empty.
+![create route](https://user-images.githubusercontent.com/36239840/97185180-3164a480-17b9-11eb-9fd3-1da5b8864c43.JPG)
+
 ## Scale Applications Using Replicas
 ## Update Application
 ## Roll back Applicatoin
