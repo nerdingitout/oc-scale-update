@@ -49,7 +49,10 @@ Note that the service inside the pod is accessible using the <Node IP>:<NodePort
  <b>Target Port:</b>3000&#8594;3000(TCP)<br>
  Then click 'Create', you can leave the rest of the fields empty.
 ![create route](https://user-images.githubusercontent.com/36239840/97185180-3164a480-17b9-11eb-9fd3-1da5b8864c43.JPG)
-
+Once created, you will be redirected to 'Route Overview' where you can access the external route from the URL under Location as shown in the screenshot. The Route has been created successfully, and it provides a publicly accessible endpoint URL using which we can access our guestbook application.<br>
+If you click on the URL, you will be redirected to a page that looks like the following.<br>
+![guestbook app](https://user-images.githubusercontent.com/36239840/97185901-15adce00-17ba-11eb-88a0-ae727879429c.JPG)
+<br>Now that you have successfully deployed the application using S2I, you will be learning how to scale and rollback your application
 ## Scale Applications Using Replicas
 ## Update Application
 ## Roll back Applicatoin
