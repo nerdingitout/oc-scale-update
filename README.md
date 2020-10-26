@@ -42,7 +42,7 @@ oc get service
 
 Note that the service inside the pod is accessible using the <Node IP>:<NodePort>, but in case of OpenShift on IBM Cloud the NodeIP is not publicly accessible. One can use the built-in kubernetes terminal available in IBM Cloud which spawns a kubernetes shell which is part of the OpenShift cluster network and NodeID:NodePort is accessible from that shell.<br>
  5- To make the exposed service publicly accessible, you will need to create a public router. First, go to <b>Networking &#8594; Routes</b> from the Administrator Perspective on the web console, then click 'Create Route'.<br>
- Fill in the information as follows:<br>
+ Fill in the information as follows:<br><br>
  <b>Name:</b>myguestbook<br>
  <b>Service:</b>myguestbook<br>
  <b>Target Port:</b>3000&#8594;3000(TCP)<br>
