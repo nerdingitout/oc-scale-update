@@ -1,14 +1,13 @@
 # Update and Rollback Deployment with Red Hat OpenShift
 Scale, Update and Rollback your application deployment
 ## Content
-- Prerequisites
-- Overview
-- Create Application Using S2I
-- Scale Applications Using Replicas
-- Update Application
-- Roll back Applicatoin
-- Summary
-
+- [Prerequisites](https://github.com/nerdingitout/oc-scale-update#prerequisites)
+- [Overview](https://github.com/nerdingitout/oc-scale-update#overview)
+- [Create Application Using S2I](https://github.com/nerdingitout/oc-scale-update#create-application-using-s2i)
+- [Scale Applications Using Replicas](https://github.com/nerdingitout/oc-scale-update#scale-applications-using-replicas)
+- [Update Application](https://github.com/nerdingitout/oc-scale-update#update-application)
+- [Roll back Applicatoin](https://github.com/nerdingitout/oc-scale-update#roll-back-applicatoin)
+- [Summary](https://github.com/nerdingitout/oc-scale-update#summary)
 ## Prerequisites
 For this tutorial you will need:
  - Red Hat OpenShift Cluster 4.3 on IBM Cloud.
