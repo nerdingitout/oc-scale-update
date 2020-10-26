@@ -12,7 +12,7 @@ Scale, Update and Rollback your application deployment
 ## Prerequisites
 For this tutorial you will need:
  - Red Hat OpenShift Cluster 4.3 on IBM Cloud.
-- oc CLI (can be downloaded from this <a href="https://mirror.openshift.com/pub/openshift-v4/clients/oc/4.3/">link</a>.
+- oc CLI (can be downloaded from this <a href="https://mirror.openshift.com/pub/openshift-v4/clients/oc/4.3/">link</a> or you can use it at <a href="http://shell.cloud.ibm.com/">http://shell.cloud.ibm.com/.
 ## Overview
 Scaling deployment is increasing the number of Pods/Instances of a given deployment.<br>
 In this tutorial, you will learn how to scale and how to update your deployment (move to a next version of the application) and roll back application if needed.
