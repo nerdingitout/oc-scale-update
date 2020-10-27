@@ -89,8 +89,10 @@ oc get pods -n guestbook-project
 
 4- Copy the name of one of the new pods and use ```oc describe pod``` to confirm that the pod is using the v2 image like the screenshot shown below.<br>
 ```
-oc describe pods/myguestbook........
+oc describe pod <pod-name>
 ```
+![describe pod](https://user-images.githubusercontent.com/36239840/97299403-55ce8880-186e-11eb-8929-4c58a4fdd303.JPG)
+
 
 ## Roll back Applicatoin
 ## Summary
