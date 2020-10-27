@@ -1,20 +1,21 @@
 # Update and Rollback Deployment with Red Hat OpenShift
 Scale, Update and Rollback your application deployment
-## Content
-- [Prerequisites](https://github.com/nerdingitout/oc-scale-update#prerequisites)
-- [Overview](https://github.com/nerdingitout/oc-scale-update#overview)
-- [Create Application Using S2I](https://github.com/nerdingitout/oc-scale-update#create-application-using-s2i)
-- [Scale Applications Using Replicas](https://github.com/nerdingitout/oc-scale-update#scale-applications-using-replicas)
-- [Update Application](https://github.com/nerdingitout/oc-scale-update#update-application)
-- [Roll back Applicatoin](https://github.com/nerdingitout/oc-scale-update#roll-back-applicatoin)
-- [Summary](https://github.com/nerdingitout/oc-scale-update#summary)
+## Introduction
+Scaling deployment is increasing the number of Pods/Instances of a given deployment.<br>
+In this tutorial, you will learn how to scale and how to update your deployment (move to a next version of the application) and roll back application if needed.
 ## Prerequisites
 For this tutorial you will need:
  - Red Hat OpenShift Cluster 4.3 on IBM Cloud.
 - oc CLI (can be downloaded from this <a href="https://mirror.openshift.com/pub/openshift-v4/clients/oc/4.3/">link</a> or you can use it at <a href="http://shell.cloud.ibm.com/">http://shell.cloud.ibm.com/.
-## Overview
-Scaling deployment is increasing the number of Pods/Instances of a given deployment.<br>
-In this tutorial, you will learn how to scale and how to update your deployment (move to a next version of the application) and roll back application if needed.
+## Estimated Time
+It will take you around 30 minutes to complete this tutorial.
+
+## Steps
+- [Create Application Using S2I](https://github.com/nerdingitout/oc-scale-update#create-application-using-s2i)
+- [Scale Applications Using Replicas](https://github.com/nerdingitout/oc-scale-update#scale-applications-using-replicas)
+- [Update Application](https://github.com/nerdingitout/oc-scale-update#update-application)
+- [Roll back Applicatoin](https://github.com/nerdingitout/oc-scale-update#roll-back-applicatoin)
+
 ## Create Application Using S2I
 1- Create a new project using the following command.<br>
 ```
@@ -22,7 +23,7 @@ oc create namespace guestbook-project
 ```
 2- Create a new deployment resource using the ibmcom/guestbook:v1 docker image in the project we just created.<br>
 ```
-oc create deployment myguestbook --image=ibmcom/guestbook:v2
+oc create deployment myguestbook --image=ibmcom/guestbook:v1
 ```
 3- This deployment creates the corresponding Pod that's in running state. Use the following command to see the list of pods in your namespace<br>
 ```
@@ -53,6 +54,36 @@ If you click on the URL, you will be redirected to a page that looks like the fo
 ![guestbook app](https://user-images.githubusercontent.com/36239840/97185901-15adce00-17ba-11eb-88a0-ae727879429c.JPG)
 <br>Now that you have successfully deployed the application using S2I, you will be learning how to scale and rollback your application
 ## Scale Applications Using Replicas
+1- Increase the capacity from a single running instance of guestbook up to 5 instances.<br>
+```
+oc scale --replicas=5 deployment/myguestbook
+```
+2- Check the status of the deployment<br>
+```
+oc rollout status deployment myguestbook
+```
+3- Verify that you have 5 pods running post the ```oc scale``` command.<br>
+```
+oc get pods -n guestbook-project
+```
+ADD SCREENSHOT HERE!!
 ## Update Application
+1- Update your deployment using the v2 image.<br>
+```
+oc set image deployment/myguestbook guestbook=ibmcom/guestbook:v2
+```
+2- Check the status of the rollout.<br>
+```
+oc rollout status deployment/myguestbook
+```
+3- Get a ist of pods (newly launched) as part of moving to the v2 image.<br>
+```
+oc get pods -n guestbook-project
+```
+4- Copy the name of one of the new pods and use ```oc describe pod``` to confirm that the pod is using the v2 image like the screenshot shown below.<br>
+```
+oc describe pods/myguestbook........
+```
+
 ## Roll back Applicatoin
 ## Summary
