@@ -79,10 +79,14 @@ oc set image deployment/myguestbook guestbook=ibmcom/guestbook:v2
 ```
 oc rollout status deployment/myguestbook
 ```
+![rollout v2](https://user-images.githubusercontent.com/36239840/97298915-924db480-186d-11eb-843d-efd2f98f2a7b.JPG)
+
 3- Get a ist of pods (newly launched) as part of moving to the v2 image.<br>
 ```
 oc get pods -n guestbook-project
 ```
+![get pods v2](https://user-images.githubusercontent.com/36239840/97298980-aa253880-186d-11eb-9ff1-7a0038c0f2d5.JPG)
+
 4- Copy the name of one of the new pods and use ```oc describe pod``` to confirm that the pod is using the v2 image like the screenshot shown below.<br>
 ```
 oc describe pods/myguestbook........
