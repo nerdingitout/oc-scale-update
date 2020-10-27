@@ -92,7 +92,8 @@ oc get pods -n guestbook-project
 oc describe pod <pod-name>
 ```
 ![describe pod](https://user-images.githubusercontent.com/36239840/97299403-55ce8880-186e-11eb-8929-4c58a4fdd303.JPG)
-
-
+Notice that the service and router objects are still unchanged while we changed the underlying docker image version of our Pod.<br>
+Do a hard refresh on the public router URL and we can see that indeed the Pod is now using the v2 image of the guestbook application.<br>
+![guestbook app](https://user-images.githubusercontent.com/36239840/97299697-cfff0d00-186e-11eb-99e8-28e0cacfafc3.JPG)
 ## Roll back Applicatoin
 ## Summary
