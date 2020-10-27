@@ -96,30 +96,38 @@ Notice that the service and router objects are still unchanged while we changed 
 Do a hard refresh on the public router URL and we can see that indeed the Pod is now using the v2 image of the guestbook application.<br>
 ![guestbook app](https://user-images.githubusercontent.com/36239840/97299697-cfff0d00-186e-11eb-99e8-28e0cacfafc3.JPG)
 ## Roll back Applicatoin
+We doing a rollout, you can see references to old replicas and new replicas. In this project, the old replicas are the original 5 pods you deployed in the first section when you scaled the application. The new replicas come from the newly created pods with the different image. All these pods are owned by the deplyment. The deplyment manages these two sets of pods with a resource called ReplicaSet. To see the guestbook ReplicaSets use the following command.<br>
 ```
 oc  get replicasets -l app=myguestbook
 ```
 ![get replicas](https://user-images.githubusercontent.com/36239840/97300667-35073280-1870-11eb-96a4-6bb7d615b87b.JPG)
+To undo your latest rollout use the following command.<br>
+
 ```
 oc rollout undo deployment/myguestbook
 ```
 ![undo deployment](https://user-images.githubusercontent.com/36239840/97300024-4dc31880-186f-11eb-8ea7-9f68d8840699.JPG)
+Get the status of undo rollout:<br>
 ```
 oc rollout status deployment/myguestbook
 ```
 ![rollout success](https://user-images.githubusercontent.com/36239840/97300153-7d722080-186f-11eb-874b-e887c0d0b815.JPG)
+You can see the newly created Pods as part of undoing the rollout.<br>
 ```
 oc get pods
 ```
 ![rollout get pods](https://user-images.githubusercontent.com/36239840/97300243-a0043980-186f-11eb-9743-dc8a4998b1cb.JPG)
+Copy the name of one of the pods and use it in the ```oc describe pod``` command to view the image and its version used in the pod.<br>
 ```
 oc describe pod <pod-name>
 ```
 ![get pods v1](https://user-images.githubusercontent.com/36239840/97300462-efe30080-186f-11eb-9561-209aa7c3471f.JPG)
+After undoing the rollout, you can check the ReplicaSets and will notice that the old replica set is now active and manage the 5 pods.<br>
 ```
 oc get replicasets -l app=myguestbook
 ```
 ![get replicas 2](https://user-images.githubusercontent.com/36239840/97300861-6b44b200-1870-11eb-81e8-cc8acfd710d6.JPG)
+To view changes, make sure to hard refresh your browser and pointing and the URL to see if v1 version of the application running.<br>
 ![guestbook v1 app](https://user-images.githubusercontent.com/36239840/97300913-7e578200-1870-11eb-9e91-81050b709574.JPG)
 
 ## Summary
