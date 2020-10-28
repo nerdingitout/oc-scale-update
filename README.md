@@ -12,7 +12,7 @@ It will take you around 30 minutes to complete this tutorial.
 - [Create Application Using S2I](https://github.com/nerdingitout/oc-scale-update#create-application-using-s2i)
 - [Scale Applications Using Replicas](https://github.com/nerdingitout/oc-scale-update#scale-applications-using-replicas)
 - [Update Application](https://github.com/nerdingitout/oc-scale-update#update-application)
-- [Roll back Applicatoin](https://github.com/nerdingitout/oc-scale-update#roll-back-applicatoin)
+- [Roll back Application](https://github.com/nerdingitout/oc-scale-update#roll-back-application)
 
 ## Create Application Using S2I
 1- Create a new project using the following command.<br>
@@ -98,7 +98,7 @@ Notice that the service and router objects remain unchanged when you changed the
 5- Do a hard refresh on the public router URL to see that the Pod is now using the v2 image of the guestbook application.<br>
 ![guestbook app](https://user-images.githubusercontent.com/36239840/97299697-cfff0d00-186e-11eb-99e8-28e0cacfafc3.JPG)
 
-## Roll back Applicatoin
+## Roll back Application
 When doing a rollout, you can see references to old replicas and new replicas. In this project, the old replicas are the original 5 pods you deployed in the second section when you scaled the application. The new replicas come from the newly created pods with the new image. All these pods are owned by the deployment. The deployment manages these two sets of pods with a resource called ReplicaSet.<br><br>
 1- To see the guestbook ReplicaSets use the following command.<br>
 ```
