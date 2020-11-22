@@ -104,35 +104,35 @@ When doing a rollout, you can see references to old replicas and new replicas. I
 ```
 oc  get replicasets -l app=myguestbook
 ```
-![get replicas](https://user-images.githubusercontent.com/36239840/97300667-35073280-1870-11eb-96a4-6bb7d615b87b.JPG)
+![get replicas](https://user-images.githubusercontent.com/36239840/97300667-35073280-1870-11eb-96a4-6bb7d615b87b.JPG)<br>
 2- Undo your latest rollout using the following command.<br>
 
 ```
 oc rollout undo deployment/myguestbook
 ```
-![undo deployment](https://user-images.githubusercontent.com/36239840/97300024-4dc31880-186f-11eb-8ea7-9f68d8840699.JPG)
+![undo deployment](https://user-images.githubusercontent.com/36239840/97300024-4dc31880-186f-11eb-8ea7-9f68d8840699.JPG)<br>
 3- Get the status of undo rollout to see the newly created Pods as part of undoing the rollout.<br>
 ```
 oc rollout status deployment/myguestbook
 ```
-![rollout success](https://user-images.githubusercontent.com/36239840/97300153-7d722080-186f-11eb-874b-e887c0d0b815.JPG)
+![rollout success](https://user-images.githubusercontent.com/36239840/97300153-7d722080-186f-11eb-874b-e887c0d0b815.JPG)<br>
 4- Get the list of the newly created pods as part of undoing the rollout.<br>
 ```
 oc get pods
 ```
-![rollout get pods](https://user-images.githubusercontent.com/36239840/97300243-a0043980-186f-11eb-9743-dc8a4998b1cb.JPG)
+![rollout get pods](https://user-images.githubusercontent.com/36239840/97300243-a0043980-186f-11eb-9743-dc8a4998b1cb.JPG)<br>
 5- Copy the name of one of the pods and use it in the ```oc describe pod``` command to view the image and its version used in the pod.<br>
 ```
 oc describe pod <pod-name>
 ```
-![get pods v1](https://user-images.githubusercontent.com/36239840/97300462-efe30080-186f-11eb-9561-209aa7c3471f.JPG)
+![get pods v1](https://user-images.githubusercontent.com/36239840/97300462-efe30080-186f-11eb-9561-209aa7c3471f.JPG)<br>
 6- After undoing the rollout, you can check the ReplicaSets and will notice that the old replica set is now active and manages the 5 pods using the following command.<br>
 ```
 oc get replicasets -l app=myguestbook
 ```
-![get replicas 2](https://user-images.githubusercontent.com/36239840/97300861-6b44b200-1870-11eb-81e8-cc8acfd710d6.JPG)
+![get replicas 2](https://user-images.githubusercontent.com/36239840/97300861-6b44b200-1870-11eb-81e8-cc8acfd710d6.JPG)<br>
 7- To view changes, make sure to hard refresh your browser and pointing and the URL to see if v1 version of the application running.<br>
-![guestbook v1 app](https://user-images.githubusercontent.com/36239840/97300913-7e578200-1870-11eb-9e91-81050b709574.JPG)
+![guestbook v1 app](https://user-images.githubusercontent.com/36239840/97300913-7e578200-1870-11eb-9e91-81050b709574.JPG)<br>
 
 ## Summary
 In this tutorial, you learned how to deploy an application on Red Hat OpenShift, scale an application using replicas, update the application with new image, and how to rollback your updates. 
