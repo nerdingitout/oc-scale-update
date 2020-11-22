@@ -9,7 +9,7 @@ For this tutorial you will need:<br>
 It will take you around 30 minutes to complete this tutorial.
 
 ## Steps
-- [Create Application From Existing Docker Image](https://github.com/nerdingitout/oc-scale-update#create-application-from-existing-docker-image)
+- [Create Application From Existing Docker Image](https://github.com/nerdingitout/oc-scale-update#create-application-from-existng-docker-image)
 - [Scale Applications Using Replicas](https://github.com/nerdingitout/oc-scale-update#scale-applications-using-replicas)
 - [Update Application](https://github.com/nerdingitout/oc-scale-update#update-application)
 - [Roll back Application](https://github.com/nerdingitout/oc-scale-update#roll-back-application)
