@@ -9,12 +9,12 @@ For this tutorial you will need:<br>
 It will take you around 30 minutes to complete this tutorial.
 
 ## Steps
-- [Create Application Using S2I](https://github.com/nerdingitout/oc-scale-update#create-application-using-s2i)
+- [Create Application From Existing Docker Image](https://github.com/nerdingitout/oc-scale-update#create-application-from-existing-docker-image)
 - [Scale Applications Using Replicas](https://github.com/nerdingitout/oc-scale-update#scale-applications-using-replicas)
 - [Update Application](https://github.com/nerdingitout/oc-scale-update#update-application)
 - [Roll back Application](https://github.com/nerdingitout/oc-scale-update#roll-back-application)
 
-## Create Application Using S2I
+## Create Application From Existng Docker Image
 1- Create a new project using the following command.<br>
 ```
 oc create namespace guestbook-project
