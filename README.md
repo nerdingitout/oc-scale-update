@@ -19,7 +19,7 @@ It will take you around 30 minutes to complete this tutorial.
 ```
 oc create namespace guestbook-project
 ```
-2- Create a new deployment resource using the [ibmcom/guestbook](https://hub.docker.com/r/ibmcom/guestbook/tags):v1 docker image in the project we just created.<br>
+2- Create a new deployment resource using the [ibmcom/guestbook:v1](https://hub.docker.com/r/ibmcom/guestbook/tags) docker image in the project we just created.<br>
 ```
 oc create deployment myguestbook --image=ibmcom/guestbook:v1
 ```
