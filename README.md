@@ -50,7 +50,7 @@ Note that the service inside the pod is accessible using the <Node IP>:<NodePort
 Once created, you will be redirected to 'Route Overview' where you can access the external route from the URL under Location as shown in the screenshot. The Route has been created successfully, and it provides a publicly accessible endpoint URL using which we can access our guestbook application.<br>
 If you click on the URL, you will be redirected to a page that looks like the following.<br>
 ![guestbook v1 app](https://user-images.githubusercontent.com/36239840/97298686-3edb6680-186d-11eb-8c0a-f6e7bc5ae9c4.JPG)
-<br>Now that you have successfully deployed the application using S2I, you will be learning how to scale and rollback your application
+<br>Now that you have successfully deployed the application using existing docker image, you will be learning how to scale and rollback your application
 
 ## Scale Applications Using Replicas
 In this section, you will be scaling applications by creating replicas of the pod you created in the first section. Having multiple replicas of a pod can help you ensure that your deployment has the available resources to handle increasing load on your application.<br>
